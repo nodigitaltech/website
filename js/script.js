@@ -57,40 +57,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const fadeElements = document.querySelectorAll('.fade-in');
     fadeElements.forEach(el => observer.observe(el));
 
-    // 4. Typing Animation (Hero Section)
-    const typingElement = document.getElementById('hero-word');
-    if (typingElement) {
-        const words = ["Organize", "Simplifique", "Controle", "Gerencie", "Automatize", "Acompanhe", "Centralize"];
-        let wordIndex = 0;
-        let charIndex = words[0].length; // Começa com a palavra completa
-        let isDeleting = false;
-
-        function typeEffect() {
-            const currentWord = words[wordIndex];
-            
-            if (isDeleting) {
-                typingElement.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingElement.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            let typeSpeed = isDeleting ? 50 : 100;
-
-            if (!isDeleting && charIndex === currentWord.length) {
-                typeSpeed = 2000; // Pausa ao completar a palavra
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                typeSpeed = 500; // Pausa antes de começar a próxima
-            }
-
-            setTimeout(typeEffect, typeSpeed);
-        }
-
-        // Inicia o efeito após 2 segundos
-        setTimeout(typeEffect, 2000);
-    }
+    
 });

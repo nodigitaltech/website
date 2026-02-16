@@ -153,6 +153,10 @@ header.scrolled {
     cursor: pointer;
 }
 
+.mobile-logo {
+    display: none;
+}
+
 /* Hero Section */
 .hero {
     background-color: var(--primary-color);
@@ -184,16 +188,6 @@ header.scrolled {
     margin-bottom: 20px;
     font-weight: 700;
 }
-
-/* Cursor piscando para o efeito de digitação */
-#hero-word::after {
-    content: '|';
-    animation: blink 1s infinite;
-    margin-left: 2px;
-    color: #2563EB;
-    font-weight: 400;
-}
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
 .hero-content p {
     font-size: 1.125rem;
@@ -315,8 +309,8 @@ header.scrolled {
 
 /* CTA Section */
 .cta-section {
-    background-color: var(--primary-color);
-    color: var(--white);
+    background-color: #ebebeb;
+    color: var(--primary-color);
     text-align: center;
 }
 
@@ -505,6 +499,7 @@ footer {
     .contact-container {
         grid-template-columns: 1fr;
         text-align: center;
+        text-align: left;
     }
 
     .hero-content h1 {
@@ -513,11 +508,22 @@ footer {
 
     .hero-buttons {
         justify-content: center;
+        justify-content: flex-start;
     }
 
     .mobile-menu-icon {
         display: block;
         z-index: 1001;
+    }
+    
+    .mobile-logo {
+        display: block;
+        margin-bottom: 25px;
+    }
+    
+    .mobile-logo img {
+        height: 45px;
+        filter: brightness(0) invert(1);
     }
 
     .nav-menu {
@@ -528,7 +534,9 @@ footer {
         height: 100vh;
         background-color: var(--primary-color);
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 20px 30px;
         transition: 0.4s ease;
         box-shadow: 5px 0 15px rgba(0,0,0,0.1);
     }
@@ -540,31 +548,44 @@ footer {
     .nav-menu ul {
         flex-direction: column;
         margin-bottom: 30px;
+        align-items: flex-start;
+        gap: 20px;
+        gap: 30px;
+    }
+
+    .nav-menu ul a {
+        font-size: 1.15rem;
     }
     
     .benefits-list li {
         justify-content: center;
+        justify-content: flex-start;
     }
     
     .info-item {
         justify-content: center;
+        justify-content: flex-start;
     }
 
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+        text-align: left;
     }
     
     .footer-social {
         justify-content: center;
+        justify-content: flex-start;
     }
     
     .footer-contact-info p {
         justify-content: center;
+        justify-content: flex-start;
     }
     
     .footer-logo img {
         margin: 0 auto 20px;
+        margin: 0 0 20px 0;
     }
 
     .about-image img {
